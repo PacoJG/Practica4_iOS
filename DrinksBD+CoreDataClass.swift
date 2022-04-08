@@ -12,11 +12,11 @@ import CoreData
 @objc(DrinksBD)
 public class DrinksBD: NSManagedObject {
     
-    func inicializaCon(_ dict: [String:Any]){
-        let image = (dict["image"] as? String) ?? ""
-        let directions = (dict["directions"] as? String) ?? ""
-        let ingredients = (dict["ingredients"] as? String) ?? ""
-        let name = (dict["name"] as? String) ?? ""
+    func inicializaCon(_ dict: [String:String]){
+        let image = (dict["image"]) ?? ""
+        let directions = (dict["directions"]) ?? ""
+        let ingredients = (dict["ingredients"]) ?? ""
+        let name = (dict["name"]) ?? ""
         self.image = image
         self.directions = directions
         self.ingredients = ingredients

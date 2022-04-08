@@ -11,6 +11,7 @@ import CoreData
 class DrinksViewController: UIViewController, UITableViewDelegate,UITableViewDataSource  {
     
     var datos = [DrinksBD]()
+    var datosadd = DrinksBD()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var tv_namedrink: UITextView!
     @IBOutlet weak var tv_ingredientsdrink: UITextView!
@@ -80,8 +81,8 @@ class DrinksViewController: UIViewController, UITableViewDelegate,UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableviewdrinks", for: indexPath)
         let elDrink = datos[indexPath.row]
         //let drinkName = (elDict["name"] as? String) ?? "\(indexPath)"
-        let tmpimage = elDrink.image
-        let imageDrink = UIImage(named:(tmpimage?.lowercased())!) ?? UIImage()
+        let tmpimage = (elDrink.image) ?? ""
+        let imageDrink = UIImage(named:(tmpimage.lowercased())) ?? UIImage()
         
         cell.textLabel?.text = elDrink.name
         cell.imageView?.image = imageDrink
@@ -136,28 +137,32 @@ class DrinksViewController: UIViewController, UITableViewDelegate,UITableViewDat
         // Get the new view controller using segue.destination.
          let nuevoVC = segue.destination as! ViewController
        // Pass the selected object to the new view controller.
-       if let indexPath = tableView.indexPathForSelectedRow {
-           let elDrink = datos[indexPath.row]
-           nuevoVC.detalle_drink = [elDrink]
-           tableView.deselectRow(at: indexPath, animated: true)
-       }
+         if let indexPath = tableView.indexPathForSelectedRow {
+             let elDrink = datos[indexPath.row]
+             nuevoVC.detalle_drink = elDrink
+             tableView.deselectRow(at: indexPath, animated: true)
+         }
+    }
+    
+    @IBAction func updateTable(_ sender: Any) {
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        datos = appDel.consultaBD()
+        self.tableView.reloadData()
     }
     
     @IBAction func onClickAdd(_ sender: Any) {
-        //let appDel = UIApplication.shared.delegate as! AppDelegate
-        let newDrink = DrinksBD(context: self.context)
-        newDrink.name = tv_namedrink.text
-        newDrink.ingredients = tv_ingredientsdrink.text
-        newDrink.directions = tv_instructionsdrink.text
-        newDrink.image = "0.jpg"
-        do{
-            try self.context.save()
-        }
-        catch{
-            
-        }
+        var newDrink = [String:String]()
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        //let newDrink = DrinksBD(context: self.context)
+        newDrink["name"] = tv_namedrink.text
+        newDrink["ingredients"] = tv_ingredientsdrink.text
+        newDrink["directions"] = tv_instructionsdrink.text
+        newDrink["image"] = "0.jpg"
+        appDel.addDrink(newDrink)
+        self.dismiss(animated: true, completion: nil)
         //appDel.consultaBD()
     }
+    
 }
 
 extension UIImage {

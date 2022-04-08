@@ -156,7 +156,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="asw-Fd-ItX">
                                 <rect key="frame" x="87" y="85" width="240" height="51"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="HxM-ZC-dBa"/>
                                     <constraint firstAttribute="height" constant="51" id="vs5-fG-ad1"/>
@@ -167,7 +167,7 @@
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wbx-os-phB">
                                 <rect key="frame" x="87" y="160" width="240" height="76"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="YV8-x2-Mtf"/>
                                     <constraint firstAttribute="width" constant="240" id="zPY-hi-HEf"/>
@@ -178,7 +178,7 @@
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dhl-hc-pyN">
                                 <rect key="frame" x="87" y="260" width="240" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="HoW-uI-uxO"/>
                                     <constraint firstAttribute="height" constant="128" id="bUI-gp-c1A"/>
@@ -214,11 +214,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkK-Tr-rJL">
+                                <rect key="frame" x="20" y="44" width="42" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="9nM-La-tuH"/>
+                                    <constraint firstAttribute="width" constant="42" id="E0q-Yn-JeI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="arrow.clockwise" catalog="system"/>
+                                <connections>
+                                    <action selector="updateTable:" destination="mC9-qD-UAT" eventType="touchDown" id="2fj-71-3u4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h2A-gE-DT2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="asw-Fd-ItX" firstAttribute="leading" secondItem="h2A-gE-DT2" secondAttribute="leading" constant="87" id="0Bn-lM-kiU"/>
+                            <constraint firstItem="RkK-Tr-rJL" firstAttribute="leading" secondItem="h2A-gE-DT2" secondAttribute="leading" constant="20" id="0dE-L9-O0v"/>
                             <constraint firstItem="wbx-os-phB" firstAttribute="top" secondItem="asw-Fd-ItX" secondAttribute="bottom" constant="24" id="4Wa-dL-x8F"/>
                             <constraint firstItem="h2A-gE-DT2" firstAttribute="trailing" secondItem="asw-Fd-ItX" secondAttribute="trailing" constant="87" id="6Tl-Jw-aIN"/>
                             <constraint firstItem="h2A-gE-DT2" firstAttribute="trailing" secondItem="wIm-SJ-Fwb" secondAttribute="trailing" constant="145" id="93n-xX-xbe"/>
@@ -230,6 +243,7 @@
                             <constraint firstItem="h2A-gE-DT2" firstAttribute="bottom" secondItem="VBI-6U-LE9" secondAttribute="bottom" constant="20" id="SSR-8Z-TVp"/>
                             <constraint firstItem="VBI-6U-LE9" firstAttribute="top" secondItem="wIm-SJ-Fwb" secondAttribute="bottom" constant="20" id="Spb-Eb-Dua"/>
                             <constraint firstItem="VBI-6U-LE9" firstAttribute="leading" secondItem="h2A-gE-DT2" secondAttribute="leading" constant="20" id="Tbb-v6-yrH"/>
+                            <constraint firstItem="RkK-Tr-rJL" firstAttribute="top" secondItem="h2A-gE-DT2" secondAttribute="top" id="YM2-4p-aV0"/>
                             <constraint firstItem="h2A-gE-DT2" firstAttribute="trailing" secondItem="wbx-os-phB" secondAttribute="trailing" constant="87" id="fyT-gn-8Yu"/>
                             <constraint firstItem="Dhl-hc-pyN" firstAttribute="top" secondItem="wbx-os-phB" secondAttribute="bottom" constant="24" id="git-gX-0tn"/>
                             <constraint firstItem="wIm-SJ-Fwb" firstAttribute="top" secondItem="Dhl-hc-pyN" secondAttribute="bottom" constant="24" id="rKh-nV-ocX"/>
@@ -249,8 +263,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

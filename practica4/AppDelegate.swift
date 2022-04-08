@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let rutaAlArchivo = Bundle.main.url(forResource: "Drinks", withExtension: "plist"){
             do {
                 let bytes = try Data(contentsOf: rutaAlArchivo)
-                let tmp = try PropertyListSerialization.propertyList(from: bytes, options: .mutableContainers, format:nil) as! [[String:Any]]
+                let tmp = try PropertyListSerialization.propertyList(from: bytes, options: .mutableContainers, format:nil) as! [[String:String]]
                 llenaBD(tmp)
                 let ud = UserDefaults.standard
                 ud.set(true, forKey: "infoOK")
@@ -97,20 +97,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data Saving support
     
-    func llenaBD(_ arreglo:[[String:Any]]){
+    func llenaBD(_ arreglo:[[String:String]]){
         //requqerimo la descripcion de la entidad para crear objetos CD
         guard let entidad = NSEntityDescription.entity(forEntityName: "DrinksBD", in: persistentContainer.viewContext)
         else{
             return
         }
-        for dict in arreglo {
+        for drink in arreglo {
             //1.- Crear un objeto bebida
-            let bebida = NSManagedObject(entity: entidad, insertInto: persistentContainer.viewContext) as! DrinksBD
+            let objectdrink = NSManagedObject(entity: entidad, insertInto: persistentContainer.viewContext) as! DrinksBD
             //2.- Setear las properties del objeto, con los datos del dict
-            bebida.inicializaCon(dict)
+            objectdrink.inicializaCon(drink)
             //3.- salvar el objeto
             saveContext()
         }
+    }
+    
+    func addDrink(_ drink: [String:String]){
+        guard let entidad = NSEntityDescription.entity(forEntityName: "DrinksBD", in: persistentContainer.viewContext)
+        else {
+            return
+        }
+        print(drink)
+        let objectdrink = NSManagedObject(entity: entidad, insertInto: persistentContainer.viewContext) as! DrinksBD
+        objectdrink.inicializaCon(drink)
+        saveContext()
+        
     }
     
     
