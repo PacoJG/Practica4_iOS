@@ -24,18 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func guardaEnUD (_ llave:String, valor:Bool) -> Bool {
-        // El diccionario UserDefaults sirve para guardar las preferencias del usuario, piensa como las cookies de los navegadores de internet
-        // el diccionario compartido para todas las aplicaciones
-        // compartido no significa que la información sea visible entre aplicaciones, a menos que, cree mi propio diccionario
-        let ud = UserDefaults.standard
-        // asignamos una llave, para guardar el valor.
-        ud.set(valor, forKey: llave)
-        // para guardar la info:
-        ud.synchronize()
-        return true
-    }
-
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

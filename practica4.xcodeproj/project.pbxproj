@@ -50,8 +50,6 @@
 		E685CD1527FE9CF2007AF152 = {
 			isa = PBXGroup;
 			children = (
-				E685CD3C27FEAA47007AF152 /* DrinksBD+CoreDataClass.swift */,
-				E685CD3D27FEAA47007AF152 /* DrinksBD+CoreDataProperties.swift */,
 				E685CD2027FE9CF2007AF152 /* practica4 */,
 				E685CD1F27FE9CF2007AF152 /* Products */,
 			);
@@ -68,6 +66,8 @@
 		E685CD2027FE9CF2007AF152 /* practica4 */ = {
 			isa = PBXGroup;
 			children = (
+				E685CD3C27FEAA47007AF152 /* DrinksBD+CoreDataClass.swift */,
+				E685CD3D27FEAA47007AF152 /* DrinksBD+CoreDataProperties.swift */,
 				E685CD3A27FEA2D6007AF152 /* Drinks.plist */,
 				E685CD2127FE9CF2007AF152 /* AppDelegate.swift */,
 				E685CD2327FE9CF3007AF152 /* SceneDelegate.swift */,
