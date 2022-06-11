@@ -7,25 +7,22 @@
 
 import UIKit
 import CoreData
+import FirebaseAuth
 
-class DrinksViewController: UIViewController, UITableViewDelegate,UITableViewDataSource  {
+class DrinksViewController: UITableViewController {
     
     var datos = [DrinksBD]()
-    var datosadd = DrinksBD()
+    /*var datosadd = DrinksBD()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var tv_namedrink: UITextView!
     @IBOutlet weak var tv_ingredientsdrink: UITextView!
     @IBOutlet weak var tv_instructionsdrink: UITextView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+        //tableView.delegate = self
+        //tableView.dataSource = self
     }
 
     /*override func viewDidLoad() {
@@ -48,20 +45,6 @@ class DrinksViewController: UIViewController, UITableViewDelegate,UITableViewDat
 
     // MARK: - Table view data source
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return datos.count
-    }
-    
     /*func obtenInfo(){
         //encuentra la ubicacion en tiempo de ejecucion de un archivo agregado al proyecto
         if let rutaAlArchivo = Bundle.main.url(forResource: "Drinks", withExtension: "plist"){
@@ -77,20 +60,35 @@ class DrinksViewController: UIViewController, UITableViewDelegate,UITableViewDat
     }*/
 
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableviewdrinks", for: indexPath)
         let elDrink = datos[indexPath.row]
         //let drinkName = (elDict["name"] as? String) ?? "\(indexPath)"
         let tmpimage = (elDrink.image) ?? ""
         let imageDrink = UIImage(named:(tmpimage.lowercased())) ?? UIImage()
-        
         cell.textLabel?.text = elDrink.name
         cell.imageView?.image = imageDrink
         cell.imageView?.image = imageDrink.resize(60, 60)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        refreshControl?.endRefreshing()
+        return datos.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "detalle", sender: self)
     }
     
@@ -132,16 +130,25 @@ class DrinksViewController: UIViewController, UITableViewDelegate,UITableViewDat
 
     
     // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+            case "detalle":
+                let nuevoVC = segue.destination as! ViewController
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let elDrink = datos[indexPath.row]
+                    nuevoVC.detalle_drink = elDrink //agregar como miembro de la clase VC a drinkName
+                    tableView.deselectRow(at: indexPath, animated: true)
+                }
+            case "add":
+                print("create new drink")
 
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-         let nuevoVC = segue.destination as! ViewController
-       // Pass the selected object to the new view controller.
-         if let indexPath = tableView.indexPathForSelectedRow {
-             let elDrink = datos[indexPath.row]
-             nuevoVC.detalle_drink = elDrink
-             tableView.deselectRow(at: indexPath, animated: true)
-         }
+            default:
+                print("reloading data...")
+        }
+        
     }
     
     @IBAction func updateTable(_ sender: Any) {
@@ -150,7 +157,7 @@ class DrinksViewController: UIViewController, UITableViewDelegate,UITableViewDat
         self.tableView.reloadData()
     }
     
-    @IBAction func onClickAdd(_ sender: Any) {
+    /*@IBAction func onClickAdd(_ sender: Any) {
         var newDrink = [String:String]()
         let appDel = UIApplication.shared.delegate as! AppDelegate
         //let newDrink = DrinksBD(context: self.context)
@@ -161,6 +168,22 @@ class DrinksViewController: UIViewController, UITableViewDelegate,UITableViewDat
         appDel.addDrink(newDrink)
         self.dismiss(animated: true, completion: nil)
         //appDel.consultaBD()
+    }*/
+    
+    @IBAction func btnLogout(_ sender: Any) {
+    
+        do {
+            try Auth.auth().signOut()
+            //Obtenemos una referencia al SceneDelegate:
+            //Podría haber mas de una escena en IpAd OS o en MacOS
+            let escena = UIApplication.shared.connectedScenes.first
+            print("sesión cerrada")
+            let sd = escena?.delegate as! SceneDelegate
+            sd.cambiarVistaA("")
+        }
+        catch {
+            print(error.localizedDescription)
+        }
     }
     
 }

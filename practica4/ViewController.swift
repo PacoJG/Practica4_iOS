@@ -29,6 +29,14 @@ class ViewController: UIViewController {
         ingredientesDrink.text = detalle_drink.ingredients
         instruccionesDrink.text = detalle_drink.directions
     }
+    
+    @IBAction func btnCompartir(_ sender: Any) {
+        print("Compartir")
+        let imageDrink:UIImage = imageDrink.image!
+        let paraCompartir:[Any] = [ imageDrink, detalle_drink.name!]
+        let ac = UIActivityViewController(activityItems:paraCompartir, applicationActivities: nil)
+        self.present(ac, animated: true)
+    }
 
 
 }

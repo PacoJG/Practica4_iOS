@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6782D3E2854609F00A5EE23 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6782D3D2854609F00A5EE23 /* GoogleService-Info.plist */; };
 		E685CD2227FE9CF2007AF152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685CD2127FE9CF2007AF152 /* AppDelegate.swift */; };
 		E685CD2427FE9CF3007AF152 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685CD2327FE9CF3007AF152 /* SceneDelegate.swift */; };
 		E685CD2627FE9CF3007AF152 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685CD2527FE9CF3007AF152 /* ViewController.swift */; };
@@ -18,9 +19,18 @@
 		E685CD3B27FEA2D6007AF152 /* Drinks.plist in Resources */ = {isa = PBXBuildFile; fileRef = E685CD3A27FEA2D6007AF152 /* Drinks.plist */; };
 		E685CD3E27FEAA47007AF152 /* DrinksBD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685CD3C27FEAA47007AF152 /* DrinksBD+CoreDataClass.swift */; };
 		E685CD3F27FEAA47007AF152 /* DrinksBD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685CD3D27FEAA47007AF152 /* DrinksBD+CoreDataProperties.swift */; };
+		E69454A428546CBB00DACF94 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69454A328546CBB00DACF94 /* CustomTextField.swift */; };
+		E69454A628546FD800DACF94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69454A528546FD800DACF94 /* LoginViewController.swift */; };
+		E69454A92854727000DACF94 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E69454A82854727000DACF94 /* FirebaseAuth */; };
+		E69454AB285472D500DACF94 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69454AA285472D500DACF94 /* CoreData.framework */; };
+		E6C735EE28549F78005AC30A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C735ED28549F78005AC30A /* AVFoundation.framework */; };
+		E6C735F02854A490005AC30A /* AddDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C735EF2854A490005AC30A /* AddDrinkViewController.swift */; };
+		E6C735F22854A669005AC30A /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C735F12854A669005AC30A /* Photos.framework */; };
+		E6C735F42854A973005AC30A /* MiAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C735F32854A973005AC30A /* MiAlbum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6782D3D2854609F00A5EE23 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E685CD1E27FE9CF2007AF152 /* practica4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = practica4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E685CD2127FE9CF2007AF152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E685CD2327FE9CF3007AF152 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +44,13 @@
 		E685CD3A27FEA2D6007AF152 /* Drinks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Drinks.plist; sourceTree = "<group>"; };
 		E685CD3C27FEAA47007AF152 /* DrinksBD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinksBD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E685CD3D27FEAA47007AF152 /* DrinksBD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinksBD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E69454A328546CBB00DACF94 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E69454A528546FD800DACF94 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E69454AA285472D500DACF94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E6C735ED28549F78005AC30A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E6C735EF2854A490005AC30A /* AddDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDrinkViewController.swift; sourceTree = "<group>"; };
+		E6C735F12854A669005AC30A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		E6C735F32854A973005AC30A /* MiAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAlbum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +58,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69454A92854727000DACF94 /* FirebaseAuth in Frameworks */,
+				E6C735F22854A669005AC30A /* Photos.framework in Frameworks */,
+				E69454AB285472D500DACF94 /* CoreData.framework in Frameworks */,
+				E6C735EE28549F78005AC30A /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +73,7 @@
 			children = (
 				E685CD2027FE9CF2007AF152 /* practica4 */,
 				E685CD1F27FE9CF2007AF152 /* Products */,
+				E69454A72854727000DACF94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +88,7 @@
 		E685CD2027FE9CF2007AF152 /* practica4 */ = {
 			isa = PBXGroup;
 			children = (
+				E6782D3D2854609F00A5EE23 /* GoogleService-Info.plist */,
 				E685CD3C27FEAA47007AF152 /* DrinksBD+CoreDataClass.swift */,
 				E685CD3D27FEAA47007AF152 /* DrinksBD+CoreDataProperties.swift */,
 				E685CD3A27FEA2D6007AF152 /* Drinks.plist */,
@@ -78,8 +101,22 @@
 				E685CD3227FE9CF9007AF152 /* Info.plist */,
 				E685CD2A27FE9CF3007AF152 /* practica4.xcdatamodeld */,
 				E685CD3827FEA292007AF152 /* DrinksViewController.swift */,
+				E69454A328546CBB00DACF94 /* CustomTextField.swift */,
+				E69454A528546FD800DACF94 /* LoginViewController.swift */,
+				E6C735EF2854A490005AC30A /* AddDrinkViewController.swift */,
+				E6C735F32854A973005AC30A /* MiAlbum.swift */,
 			);
 			path = practica4;
+			sourceTree = "<group>";
+		};
+		E69454A72854727000DACF94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6C735F12854A669005AC30A /* Photos.framework */,
+				E6C735ED28549F78005AC30A /* AVFoundation.framework */,
+				E69454AA285472D500DACF94 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +135,9 @@
 			dependencies = (
 			);
 			name = practica4;
+			packageProductDependencies = (
+				E69454A82854727000DACF94 /* FirebaseAuth */,
+			);
 			productName = practica4;
 			productReference = E685CD1E27FE9CF2007AF152 /* practica4.app */;
 			productType = "com.apple.product-type.application";
@@ -126,6 +166,9 @@
 				Base,
 			);
 			mainGroup = E685CD1527FE9CF2007AF152;
+			packageReferences = (
+				E69454A228546AA700DACF94 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = E685CD1F27FE9CF2007AF152 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,6 +185,7 @@
 			files = (
 				E685CD3127FE9CF9007AF152 /* LaunchScreen.storyboard in Resources */,
 				E685CD3B27FEA2D6007AF152 /* Drinks.plist in Resources */,
+				E6782D3E2854609F00A5EE23 /* GoogleService-Info.plist in Resources */,
 				E685CD2E27FE9CF9007AF152 /* Assets.xcassets in Resources */,
 				E685CD2927FE9CF3007AF152 /* Main.storyboard in Resources */,
 			);
@@ -154,11 +198,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69454A628546FD800DACF94 /* LoginViewController.swift in Sources */,
+				E6C735F42854A973005AC30A /* MiAlbum.swift in Sources */,
 				E685CD3E27FEAA47007AF152 /* DrinksBD+CoreDataClass.swift in Sources */,
 				E685CD2627FE9CF3007AF152 /* ViewController.swift in Sources */,
 				E685CD2C27FE9CF3007AF152 /* practica4.xcdatamodeld in Sources */,
 				E685CD3F27FEAA47007AF152 /* DrinksBD+CoreDataProperties.swift in Sources */,
+				E69454A428546CBB00DACF94 /* CustomTextField.swift in Sources */,
 				E685CD2227FE9CF2007AF152 /* AppDelegate.swift in Sources */,
+				E6C735F02854A490005AC30A /* AddDrinkViewController.swift in Sources */,
 				E685CD3927FEA292007AF152 /* DrinksViewController.swift in Sources */,
 				E685CD2427FE9CF3007AF152 /* SceneDelegate.swift in Sources */,
 			);
@@ -326,7 +374,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -354,7 +402,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -380,6 +428,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E69454A228546AA700DACF94 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E69454A82854727000DACF94 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E69454A228546AA700DACF94 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E685CD2A27FE9CF3007AF152 /* practica4.xcdatamodeld */ = {

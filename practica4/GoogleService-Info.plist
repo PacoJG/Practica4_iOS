@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>55249286912-t68ao0ep10e7tt84v8qnm1drijohaaro.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.55249286912-t68ao0ep10e7tt84v8qnm1drijohaaro</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAygFG52pPr14RHvT21T-8-x_Bcl2HBFPk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>55249286912</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>francisco.jaime.practica4</string>
+	<key>PROJECT_ID</key>
+	<string>drinks-d7c6c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>drinks-d7c6c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:55249286912:ios:4cc161049cc1303f9925e5</string>
+</dict>
+</plist>
