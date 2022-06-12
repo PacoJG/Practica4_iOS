@@ -220,6 +220,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Registraté">
                                     <fontDescription key="titleFontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnSignUp:" destination="Sl9-KL-bZo" eventType="touchUpInside" id="tMS-4e-PcJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Aún no tienes una cuenta?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD4-V1-Pd2">
                                 <rect key="frame" x="74" y="837.5" width="179" height="16.5"/>

@@ -33,6 +33,40 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func btnSignUp(_ sender: Any) {
+        let alert = UIAlertController(title: "Crear cuenta" , message: "Ingresa tus datos", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
+        // agregar text fields a un alert
+        alert.addTextField(configurationHandler: { txtEmail in
+            txtEmail.placeholder = "Correo electrónico"
+            txtEmail.clearButtonMode = .always
+        })
+        
+        alert.addTextField(configurationHandler: { txtPass in
+            txtPass.placeholder = "Password"
+            txtPass.clearButtonMode = .always
+            txtPass.isSecureTextEntry = true
+        })
+        
+        let btnEnviar = UIAlertAction(title: "Enviar" , style: .default , handler: {action in
+            
+            guard let email = alert.textFields![0].text ,
+            let pass  = alert.textFields![1].text
+            else { return }
+            self.ai.startAnimating()
+            Auth.auth().createUser(withEmail: email, password: pass, completion: { auth , error in
+                if error != nil {
+                    print ("ocurrió un error \(String(describing: error))")
+                    self.ai.stopAnimating()
+                }
+                self.performSegue(withIdentifier: "goHome", sender: nil)
+            })
+            
+        })
+        alert.addAction(btnEnviar)
+        self.present(alert, animated: true, completion: nil)
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
